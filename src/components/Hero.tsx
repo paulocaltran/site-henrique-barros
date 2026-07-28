@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { site } from "@/lib/site";
 import { images } from "@/lib/images";
-import { IconWhatsApp, IconHeart, IconArrow } from "@/components/icons";
+import { IconArrow } from "@/components/icons";
 
 export default function Hero() {
   return (
@@ -46,23 +46,16 @@ export default function Hero() {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
-              href="#apoie"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 font-semibold text-white shadow-lg shadow-accent/30 transition-transform hover:scale-[1.03] active:scale-95"
-            >
-              <IconHeart className="h-5 w-5" />
-              Apoie a campanha
-            </a>
-            <a
-              href="#bandeiras"
+              href="#sobre"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/5 px-6 py-3.5 font-semibold text-white backdrop-blur transition-colors hover:bg-white/15"
             >
-              Conheça as bandeiras
+              Conheça o Henrique
               <IconArrow className="h-5 w-5" />
             </a>
           </div>
 
           <div className="mt-8 flex items-center gap-4">
-            <div className="flex items-center gap-3 rounded-xl bg-white px-4 py-3 shadow-lg">
+            <div className="inline-flex items-center gap-3 rounded-xl bg-white px-4 py-3 shadow-lg">
               <Image
                 src="/images/pdt.png"
                 alt="PDT — Partido Democrático Trabalhista"
@@ -76,23 +69,9 @@ export default function Hero() {
                   <span className="font-display text-3xl font-extrabold leading-none text-blue-dark">
                     {site.ballotNumber}
                   </span>
-                  <span className="text-xs font-medium leading-tight text-ink-soft">
-                    seu voto de
-                    <br />
-                    confiança
-                  </span>
                 </>
               )}
             </div>
-            <a
-              href={site.contact.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-white/80 transition-colors hover:text-white"
-            >
-              <IconWhatsApp className="h-5 w-5" />
-              {site.contact.whatsappDisplay}
-            </a>
           </div>
         </div>
       </div>

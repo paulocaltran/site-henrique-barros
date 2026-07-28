@@ -39,18 +39,13 @@ export const site = {
     donate: "https://queroapoiar.com.br/henriquebarros",
   },
 
-  // Navegação principal (páginas do site)
+  // Navegação (âncoras da página única)
   nav: [
-    { label: "Início", href: "/" },
-    { label: "Quem Sou", href: "/quem-sou" },
-    { label: "Contato", href: "/contato" },
-  ],
-
-  // Seções âncora dentro da página inicial (campanha)
-  homeSections: [
-    { label: "Bandeiras", href: "/#bandeiras" },
+    { label: "Início", href: "/#topo" },
+    { label: "O Henrique", href: "/#sobre" },
     { label: "Trajetória", href: "/#trajetoria" },
     { label: "Apoie", href: "/#apoie" },
+    { label: "Contato", href: "/#contato" },
   ],
 
   legal: [

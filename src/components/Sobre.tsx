@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { site } from "@/lib/site";
 import { images } from "@/lib/images";
 import { destaques } from "@/lib/content";
 
@@ -15,14 +14,8 @@ export default function Sobre() {
               alt={images.retrato.alt}
               fill
               sizes="(max-width: 1024px) 100vw, 45vw"
-              className="object-cover object-[50%_15%]"
+              className="object-cover object-center"
             />
-          </div>
-          <div className="absolute -bottom-5 -right-4 hidden rounded-xl bg-blue-light px-5 py-4 text-white shadow-lg sm:block">
-            <span className="block font-display text-2xl font-extrabold leading-none">
-              {site.city}
-            </span>
-            <span className="text-xs font-medium text-white/80">a nossa terra</span>
           </div>
         </div>
 

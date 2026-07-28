@@ -46,3 +46,7 @@ next-env.d.ts
 
 # ferramentas locais
 /.claude/
+
+# imagens-fonte soltas (já copiadas para public/images)
+/foto_*.jpeg
+/foto_*.jpg

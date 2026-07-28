@@ -1,26 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
-import {
-  IconWhatsApp,
-  IconInstagram,
-  IconMail,
-  IconPhone,
-  IconPin,
-  IconFacebook,
-  IconYouTube,
-  IconLinkedIn,
-} from "@/components/icons";
+import { IconWhatsApp, IconInstagram, IconMail, IconPin } from "@/components/icons";
 
 export default function Footer() {
   const year = new Date().getFullYear();
-
-  const socials = [
-    { icon: IconInstagram, label: "Instagram", href: site.contact.instagram },
-    { icon: IconFacebook, label: "Facebook", href: site.contact.facebook },
-    { icon: IconYouTube, label: "YouTube", href: site.contact.youtube },
-    { icon: IconLinkedIn, label: "LinkedIn", href: site.contact.linkedin },
-  ].filter((s) => s.href);
 
   return (
     <footer className="border-t border-white/10 bg-blue-dark text-white">
@@ -74,22 +58,24 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={site.contact.phoneHref}
-                  className="inline-flex items-center gap-3 text-white/80 transition-colors hover:text-brand-light"
-                >
-                  <IconPhone className="h-5 w-5 shrink-0" />
-                  {site.contact.phoneDisplay}
-                </a>
-              </li>
-              <li>
-                <a
                   href={site.contact.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 text-white/80 transition-colors hover:text-brand-light"
                 >
                   <IconWhatsApp className="h-5 w-5 shrink-0" />
-                  WhatsApp
+                  WhatsApp · {site.contact.phoneDisplay}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.contact.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 text-white/80 transition-colors hover:text-brand-light"
+                >
+                  <IconInstagram className="h-5 w-5 shrink-0" />
+                  {site.contact.instagramHandle}
                 </a>
               </li>
               <li className="inline-flex items-center gap-3 text-white/80">
@@ -116,26 +102,6 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-
-            {socials.length > 0 && (
-              <div className="mt-5 flex gap-2">
-                {socials.map((s) => {
-                  const Icon = s.icon;
-                  return (
-                    <a
-                      key={s.label}
-                      href={s.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={s.label}
-                      className="grid h-9 w-9 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
-                    >
-                      <Icon className="h-5 w-5" />
-                    </a>
-                  );
-                })}
-              </div>
-            )}
           </div>
         </div>
 
