@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" fill="none">
+  <rect width="800" height="1000" fill="#f5f6f9"/>
+  <rect x="0" y="0" width="800" height="1000" fill="url(#g)"/>
+  <g fill="#1b37b8" opacity="0.9">
+    <circle cx="400" cy="380" r="120"/>
+    <path d="M400 520c-150 0-250 110-250 260v40h500v-40c0-150-100-260-250-260Z"/>
+  </g>
+  <rect x="250" y="838" width="300" height="8" rx="4" fill="#fbb70b"/>
+  <text x="400" y="900" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="30" fill="#40454d">RETRATO</text>
+  <text x="400" y="940" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#8a8f97">public/images/retrato.jpg</text>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e9ecf5"/>
+    </linearGradient>
+  </defs>
+</svg>

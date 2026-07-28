@@ -24,6 +24,10 @@
 .DS_Store
 *.pem
 
+# fotos-fonte soltas (originais do WhatsApp) — as usadas já estão em public/images
+/WhatsApp Image*.jpeg
+/WhatsApp Image*.jpg
+
 # debug
 npm-debug.log*
 yarn-debug.log*
@@ -39,3 +43,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# ferramentas locais
+/.claude/

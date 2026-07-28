@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0d2352"/>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <rect x="0" y="0" width="1200" height="12" fill="#2f86e0"/>
+  <rect x="0" y="618" width="1200" height="12" fill="#e11623"/>
+  <text x="80" y="300" font-family="Arial, sans-serif" font-weight="bold" font-size="84" fill="#ffffff" letter-spacing="-1">HENRIQUE BARROS</text>
+  <text x="82" y="360" font-family="Arial, sans-serif" font-size="32" fill="#4f9bf0" letter-spacing="3">DEPUTADO ESTADUAL · SÃO PAULO · PDT</text>
+  <text x="80" y="470" font-family="Arial, sans-serif" font-weight="bold" font-size="38" fill="#ffffff" opacity="0.92">Trabalho, família e desenvolvimento!</text>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a46b0"/>
+      <stop offset="1" stop-color="#0d2352"/>
+    </linearGradient>
+  </defs>
+</svg>

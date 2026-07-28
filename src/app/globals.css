@@ -1,26 +1,74 @@
 @import "tailwindcss";
 
+@theme {
+  /* ---- PRIMÁRIAS: azul claro + azul escuro ---- */
+  --color-blue-dark: #0d2352; /* azul escuro */
+  --color-blue: #1a46b0; /* azul principal */
+  --color-blue-light: #2f86e0; /* azul claro */
+
+  /* Aliases da marca (usados em bg-brand, text-brand, etc.) */
+  --color-brand: #1a46b0;
+  --color-brand-dark: #123a8f;
+  --color-brand-darker: #0d2352;
+  --color-brand-light: #2f86e0;
+  --color-brand-50: #eef3fd;
+  --color-brand-100: #d6e2fa;
+
+  /* ---- TERCIÁRIA: vermelho (PDT) ---- */
+  --color-accent: #e11623;
+  --color-accent-dark: #b0111b;
+  --color-accent-50: #fdeff0;
+
+  /* Neutros */
+  --color-ink: #14161a;
+  --color-ink-soft: #40454d;
+  --color-cloud: #f4f7fc;
+  --color-line: #e4e8f2;
+
+  /* Tipografia */
+  --font-display: var(--font-display-src), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-sans-src), ui-sans-serif, system-ui, sans-serif;
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: var(--color-ink);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Rótulo de seção com traço da marca (azul) */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  color: var(--color-blue);
+}
+.eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: 2px;
+  background: currentColor;
+  display: inline-block;
+}
+
+/* Realce azul-claro atrás de palavras-chave */
+.mark {
+  background: linear-gradient(180deg, transparent 62%, var(--color-brand-100) 62%);
 }

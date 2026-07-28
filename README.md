@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Henrique Barros — Site Oficial
 
-## Getting Started
+Site oficial e institucional de **Henrique Barros** (engenheiro mecânico, Guarulhos-SP).
+Estruturado também para atender aos requisitos de **verificação de anúncios políticos da Meta**
+(comprovação de identidade, domínio, e-mail e telefone), além da home de apresentação.
 
-First, run the development server:
+🔗 **Produção:** [enghenriquebarros.com.br](https://www.enghenriquebarros.com.br)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ✨ Destaques técnicos
+
+- **Next.js 16** (App Router) + **React 19** + **TypeScript**
+- **Tailwind CSS v4** com tema de design tokens (cores da marca, tipografia)
+- Tipografia com `next/font` (Barlow + Inter) — auto-hospedada, sem requisições externas
+- **100% estático** (SSG) — carregamento instantâneo e ótimo para SEO
+- SEO completo: Open Graph, Twitter Cards, `sitemap.xml`, `robots.txt`, metadados em pt-BR
+- **Schema.org** (Person) para identidade estruturada
+- **LGPD**: banner de consentimento de cookies; Analytics só carrega após o "Aceitar"
+- Google Analytics e verificações (Search Console / Meta) via variáveis de ambiente
+- Totalmente **responsivo** (mobile-first) e acessível (HTML semântico, navegação por teclado)
+- Conteúdo centralizado e fácil de editar (sem mexer no layout)
+
+## 🧭 Páginas
+
+- **Início** (`/`) — apresentação: hero, bandeiras, trajetória, apoie
+- **Quem Sou** (`/quem-sou`) — biografia, foto, trajetória e valores
+- **Contato** (`/contato`) — formulário (via WhatsApp), canais e mapa
+- **Política de Privacidade** (`/politica-de-privacidade`) — LGPD
+- **Termos de Uso** (`/termos-de-uso`)
+
+Nome, e-mail e telefone de Henrique Barros aparecem no rodapé de **todas** as páginas.
+
+## 🔐 Variáveis de ambiente
+
+Copie `.env.local.example` para `.env.local` e preencha quando tiver os IDs:
+
+```
+NEXT_PUBLIC_GA_ID=                    # Google Analytics 4 (G-XXXX) — carrega só após consentimento
+NEXT_PUBLIC_GSC_VERIFICATION=         # Google Search Console
+NEXT_PUBLIC_FB_DOMAIN_VERIFICATION=   # Verificação de domínio da Meta
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Rodando localmente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Abra [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+Outros comandos:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build   # build de produção
+npm run start   # servir o build
+npm run lint    # análise estática
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✏️ Como editar o conteúdo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Quase tudo é editável em poucos arquivos, sem tocar no layout:
 
-## Deploy on Vercel
+| O quê | Arquivo |
+| --- | --- |
+| Nome, número, slogan, contatos, links, menu | `src/lib/site.ts` |
+| Bandeiras, trajetória e números de destaque | `src/lib/content.ts` |
+| Caminhos das imagens (placeholder → foto real) | `src/lib/images.ts` |
+| Fotos e imagens | `public/images/` |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Trocar as fotos
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+As imagens atuais são **placeholders** (`.svg`). Para usar as fotos reais, veja
+[`public/images/README.md`](public/images/README.md).
+
+### Definir o número de urna
+
+Em `src/lib/site.ts`, preencha `ballotNumber` com os 5 dígitos oficiais
+(ex.: `"12345"`). Enquanto estiver vazio, o site exibe `PDT 12`.
+
+## ☁️ Deploy na Vercel
+
+1. Suba este repositório para o GitHub.
+2. Em [vercel.com](https://vercel.com) → **Add New → Project** → importe o repositório.
+3. A Vercel detecta o Next.js automaticamente — basta **Deploy**.
+4. Em **Settings → Domains**, adicione `enghenriquebarros.com.br` e configure o DNS
+   conforme as instruções da Vercel.
+
+A cada `git push` na branch principal, a Vercel publica automaticamente.
+
+---
+
+Desenvolvido com Next.js.
